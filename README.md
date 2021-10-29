@@ -2,6 +2,10 @@
 
 Quick node project to demo Redux basics on React.
 
+### Branches
+**redux-basic** Basic Redux implementation
+**redux-toolkit** Same using Redux Toolkit
+
 ## Available Scripts
 
 In the project directory, you can run:
