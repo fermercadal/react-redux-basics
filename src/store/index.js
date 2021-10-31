@@ -1,10 +1,10 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const initialState = { counter: 0, showCounter: true };
+const initialCounterState = { counter: 0, showCounter: true };
 
 const counterSlice = createSlice({
   name: "Counter",
-  initialState,
+  initialState: initialCounterState,
   reducers: {
     increment(state) {
       // Seems wrong (and it is) but redux toolkit will internally replace this 
