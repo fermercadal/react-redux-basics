@@ -1,6 +1,6 @@
 # React Redux Basics
 
-Quick node project to demo Redux basics on React.
+Quick node project to practice Redux on React. Includes basics, Redux Toolkit, useSelector and useDispatch
 
 ### Branches
 **redux-basic** Basic Redux implementation
