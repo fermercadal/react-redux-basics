@@ -7,12 +7,12 @@ const counterSlice = createSlice({
   initialState: initialCounterState,
   reducers: {
     increment(state) {
-      // Seems wrong (and it is) but redux toolkit will internally replace this 
+      // Seems wrong (and it is) but redux toolkit will internally replace this
       // with code that doesn't mutate the state directly
       state.counter++;
     },
     decrement(state) {
-      state.counter--
+      state.counter--;
     },
     increase(state, action) {
       state.counter = state.counter + action.payload;
@@ -23,14 +23,32 @@ const counterSlice = createSlice({
   },
 });
 
+const initialAuthState = {
+  isAuthenticated: false,
+};
+
+const authSlice = createSlice({
+  name: "Authentication",
+  initialState: initialAuthState,
+  reducers: {
+    login(state) {
+      state.isAuthenticated = true;
+    },
+    logout(state) {
+      state.isAuthenticated = false;
+    },
+  },
+});
+
 const store = configureStore({
   // Global reducer
-  reducer: counterSlice.reducer
+  // reducer: counterSlice.reducer
   // If there are more than one reducer
-  // reducer: { counter: counterSlice.reducer }
+  reducer: { counter: counterSlice.reducer, auth: authSlice.reducer },
 });
 
 // Action creators
 export const counterActions = counterSlice.actions;
+export const authActions = authSlice.actions;
 
 export default store;
